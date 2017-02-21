@@ -50,10 +50,7 @@
                   element.off('mouseenter');
                   element.off('mouseleave');
                   $(document).off('click');
-                  $window.removeEventListener('resize', onresizefunc);
-                  $window.removeEventListener('scroll', onscrollfunc);
-
-              });
+               });
               /*basic variables */
                 var placement = attributes.tinkTooltipPlace;
                 var align = attributes.tinkTooltipAlign;
