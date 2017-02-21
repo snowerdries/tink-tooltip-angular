@@ -45,6 +45,15 @@
     compile: function compile( tElement, attrs ) {
       return {
           post: function postLink( scope, element, attributes,controller) {
+             scope.$on('$destroy', function () {
+                  element.off('click');
+                  element.off('mouseenter');
+                  element.off('mouseleave');
+                  $(document).off('click');
+                  $window.removeEventListener('resize', onresizefunc);
+                  $window.removeEventListener('scroll', onscrollfunc);
+
+              });
               /*basic variables */
                 var placement = attributes.tinkTooltipPlace;
                 var align = attributes.tinkTooltipAlign;
